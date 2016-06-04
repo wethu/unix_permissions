@@ -16,5 +16,9 @@ RSpec.describe Permissions do
     it "converts rw-rw-r-- to 664" do
       expect(subject.string_to_int("rw-rw-r--")).to eq 664
     end
+
+    it do
+      expect(subject.string_to_int("abcabd---")).to be_nil
+    end
   end
 end
