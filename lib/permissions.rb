@@ -7,6 +7,6 @@ module Permissions
     string.split("").each_slice(3).reduce([]) do |memo, chars|
       result = chars.map { |c| map[c] }.reduce(&:+)
       memo << result
-    end.join("")
+    end.join("").to_i
   end
 end
